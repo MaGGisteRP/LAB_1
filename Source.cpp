@@ -4,36 +4,37 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(1920, 1080), "image.jpg"); // Создаем окно размером 800x600
+    sf::RenderWindow window(sf::VideoMode(1920, 1080), "image.jpg"); // РЎРѕР·РґР°РµРј РѕРєРЅРѕ СЂР°Р·РјРµСЂРѕРј 800x600
 
     sf::Texture texture;
-    if (!texture.loadFromFile("C:/Users/susin/source/repos/SSSsusaAAA/SFML Image Demo/image.jpg")) // Загружаем изображение из файла "image.jpg"
+    if (!texture.loadFromFile("C:/Users/susin/source/repos/SSSsusaAAA/SFML Image Demo/image.jpg")) // Р—Р°РіСЂСѓР¶Р°РµРј РёР·РѕР±СЂР°Р¶РµРЅРёРµ РёР· С„Р°Р№Р»Р° "image.jpg"
     {
         std::cout << "Failed to load image!" << std::endl;
         return -1;
     }
 
-    sf::Sprite sprite(texture); // Создаем спрайт с используемой текстурой
+    sf::Sprite sprite(texture); // РЎРѕР·РґР°РµРј СЃРїСЂР°Р№С‚ СЃ РёСЃРїРѕР»СЊР·СѓРµРјРѕР№ С‚РµРєСЃС‚СѓСЂРѕР№
 
-    window.clear(sf::Color::White); // Очищаем окно
+    window.clear(sf::Color::White); // РћС‡РёС‰Р°РµРј РѕРєРЅРѕ
 
-    window.draw(sprite); // Отображаем спрайт в окне
+    window.draw(sprite); // РћС‚РѕР±СЂР°Р¶Р°РµРј СЃРїСЂР°Р№С‚ РІ РѕРєРЅРµ
 
-    window.display(); // Обновляем окно
+    window.display(); // РћР±РЅРѕРІР»СЏРµРј РѕРєРЅРѕ
 
     sf::Clock clock;
-    while (clock.getElapsedTime().asSeconds() < 3) // Задерживаем программу на 10 секунд
+    while (clock.getElapsedTime().asSeconds() < 3) // Р—Р°РґРµСЂР¶РёРІР°РµРј РїСЂРѕРіСЂР°РјРјСѓ РЅР° 10 СЃРµРєСѓРЅРґ
     {
-        // Обрабатываем события окна
+        // РћР±СЂР°Р±Р°С‚С‹РІР°РµРј СЃРѕР±С‹С‚РёСЏ РѕРєРЅР°
         sf::Event event;
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
             {
-                window.close(); // Закрываем окно по нажатию на крестик
+                window.close(); // Р—Р°РєСЂС‹РІР°РµРј РѕРєРЅРѕ РїРѕ РЅР°Р¶Р°С‚РёСЋ РЅР° РєСЂРµСЃС‚РёРє
             }
         }
     }
 
     return 0;
 }
+
